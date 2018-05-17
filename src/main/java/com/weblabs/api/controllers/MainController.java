@@ -30,4 +30,9 @@ public class MainController {
 		return "All found names of Foo are: "+names;
 		
 	}
+	
+	@RequestMapping("/loginx")
+	String login() {
+		return "Need to be logged in";
+	}
 }
