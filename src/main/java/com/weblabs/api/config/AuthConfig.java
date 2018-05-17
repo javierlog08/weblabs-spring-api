@@ -7,13 +7,13 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 
-import com.weblabs.api.services.UsersService;
+import com.weblabs.api.services.UserAuthService;
 
 @Configuration
 public class AuthConfig {
 	
 	@Autowired
-	UsersService userDetailsService;
+	UserAuthService userDetailsService;
 	
 	@Bean
 	public static NoOpPasswordEncoder passwordEncoder() {

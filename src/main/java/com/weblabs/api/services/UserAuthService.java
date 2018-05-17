@@ -18,7 +18,7 @@ import com.weblabs.api.models.UserModel;
 import com.weblabs.api.repositories.UsersRepository;
 
 @Service
-public class UsersService implements UserDetailsService {
+public class UserAuthService implements UserDetailsService {
 
 	@Autowired
 	UsersRepository userRepository;
