@@ -19,9 +19,6 @@ class WebConfig implements WebMvcConfigurer {
 		.authorizeRequests()
 			.anyRequest().authenticated()
 			.and()
-		.formLogin()
-			.loginPage("/loginx")
-			.and()
 		.httpBasic();
 	}
 	
