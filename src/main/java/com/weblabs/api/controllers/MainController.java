@@ -15,24 +15,14 @@ public class MainController {
 	
 	@RequestMapping("/")
 	String index() {
-		return "I dont like spring data rest";
+		return "Welcome to API Base project.";
 	}
 	
-	@RequestMapping("/test")
-	String test() {
+	@RequestMapping("/foo")
+	Iterable<FooModel> foo() {
 		Iterable<FooModel> i = fooRepository.findAll();
 		
-		String names = "";
-		for(FooModel model : i ) {
-			names += model.name + " ";
-		}
+		return i;
 		
-		return "All found names of Foo are: "+names;
-		
-	}
-	
-	@RequestMapping("/loginx")
-	String login() {
-		return "Need to be logged in";
 	}
 }
