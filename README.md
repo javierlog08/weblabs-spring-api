@@ -14,12 +14,12 @@ This stater template includes:
  
  We asumme you know how to use spring frameworks and spring boot and also that this implies that you need to install maven and all that stuff.
  
- ** for us is required :**
+ **for us is required :**
  
  Setup one postgresql database on VM machine or in your own machine and create one empty database and called *api*. Once you do this automaticly our migration engine will
  fill the database with all necessary tables to start.
  
- ** important: please always use latest postgres db version, for this Demo we are using postgresql version 9.5, cause uf you postgresdb is too old, then flyway will ask for comertial support**
+ **important: please always use latest postgres db version, for this Demo we are using postgresql version 9.5, cause uf you postgresdb is too old, then flyway will ask for comertial support**
   
 
  ## How to run
@@ -34,9 +34,11 @@ This stater template includes:
  
  ## See in action
  
- You can test it or see it in action using  accesing on the browser to the url http://127.0.0.1:port 
+ You can see it in action on the browser to the url http://127.0.0.1:8080 (or whetever the port that spring is using to run the webapp)
  
- We recommend test this webservice using *curl* command
+ Default user and password is admin / admin.
+ 
+ We recommend use this webservice with *curl* command
  
  ```
   // If you do
