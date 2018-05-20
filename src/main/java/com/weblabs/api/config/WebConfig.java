@@ -14,12 +14,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableWebSecurity
 class WebConfig implements WebMvcConfigurer {
 	
-	protected void configure(HttpSecurity http) throws Exception {
+	/*protected void configure(HttpSecurity http) throws Exception {
 		http
 		.authorizeRequests()
 			.anyRequest().authenticated()
 			.and()
 		.httpBasic();
-	}
+	}*/
 	
 }

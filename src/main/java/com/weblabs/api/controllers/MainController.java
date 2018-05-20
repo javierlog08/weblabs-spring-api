@@ -12,10 +12,10 @@ public class MainController {
 	
 	@Autowired
 	private FooRepository fooRepository;
-
+	
 	@RequestMapping("/")
-	String home() {
-		return "Hello World Nigga!";
+	String index() {
+		return "I dont like spring data rest";
 	}
 	
 	@RequestMapping("/test")
