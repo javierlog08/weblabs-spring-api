@@ -32,7 +32,7 @@ This stater template includes:
  # mvn spring-boot:run
  ```
  
- ## See in action
+ ## How to use
  
  You can see it in action on the browser to the url http://127.0.0.1:8080 (or whetever the port that spring is using to run the webapp)
  
@@ -53,3 +53,37 @@ This stater template includes:
   // the output will be
   # [{"id":1,"name":"bar"}]
  ```
+ 
+ ### Using with token based authentication
+ We are using Spring Session version 1.3.3 in this project to enable  HttpSession Strategy that allow us enable Token based authentication,
+ in this way you can control sessions from the server side and use a token that should expirates to get information from the server
+ 
+ **Lets to see in action with curl command:***
+ 
+ ```
+ // When you authenticate with username and password you should see your token back
+ # curl -v --user admin:admin http://127.0.0.1:8080/foo
+ 
+ // You will see something like this as response
+ 
+ < HTTP/1.1 200
+< X-Content-Type-Options: nosniff
+< X-XSS-Protection: 1; mode=block
+< Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+< Pragma: no-cache
+< Expires: 0
+< X-Frame-Options: DENY
+< x-auth-token: 17433234-6426-4a16-bb8b-3ba228835817
+< Content-Type: application/json;charset=UTF-8
+< Transfer-Encoding: chunked
+< Date: Mon, 21 May 2018 03:40:31 GMT
+
+// Then  if you want to use the current session , copy and paste the x-auth-token and use it with every request
+# curl -v http://127.0.0.1:8080/foo -H "x-auth-token: 17433234-6426-4a16-bb8b-3ba228835817"
+
+// The output will be
+[{"id":1,"name":"bar"}]* Connection #0 to host 127.0.0.1 left intact
+  
+ ```
+ 
+ With token based authentication you dont need to pass username and password with every request, and you can set expiration time from the server side in the application.properties file. just set spring.session.timeout.seconds=YOUR TIME IN SECONDS
