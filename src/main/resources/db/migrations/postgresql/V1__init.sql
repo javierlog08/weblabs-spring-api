@@ -4,3 +4,5 @@ CREATE TABLE foo (
 );
 
 INSERT INTO foo (name)  VALUES ('bar');
+
+INSERT INTO foo (name) values('zoo');
