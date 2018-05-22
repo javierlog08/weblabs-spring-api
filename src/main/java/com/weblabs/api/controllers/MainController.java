@@ -4,14 +4,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.weblabs.api.models.BookModel;
 import com.weblabs.api.models.FooModel;
 import com.weblabs.api.repositories.FooRepository;
+import com.weblabs.api.services.BookService;
 
 @RestController
 public class MainController {
 	
 	@Autowired
 	private FooRepository fooRepository;
+	
+	@Autowired
+	BookService bookService;
 	
 	@RequestMapping("/")
 	String index() {
@@ -23,6 +28,10 @@ public class MainController {
 		Iterable<FooModel> i = fooRepository.findAll();
 		
 		return i;
-		
+	}
+	
+	@RequestMapping("/books")
+	Iterable<BookModel> books() {
+		return bookService.list();
 	}
 }
